@@ -4,6 +4,7 @@ A tiny menubar (macOS) / tray (Windows 10/11) app that shows what each AI coding
 
 - One icon per AI tool with a session count. Click it for every session: project, state, model, terminal/IDE, tokens, context %, and Claude Code's 5-hour / 7-day plan usage.
 - Notifications when an agent needs your approval or asks a question.
+- An optional floating gadget (off by default): a small always-on-top panel with the character, 5h / 7d usage and every session. Turn it on from the menu or **Settings → Appearance**; drag it anywhere, pick Small / Medium / Large, and pin it to stay on top.
 - Works with Claude Code (hooks and its own status files). Several Claude accounts (for example started with `HOME=~/.claude-work claude`) are supported as separate profiles.
 - Characters: samurai, knight, viking, soldier, oni, vampire, mage, cat, dog, bunny, robot, minimal. English and Thai.
 - Display only, local only: no network, no prompt or code storage, no credential reads, sessions kept in memory.
@@ -36,6 +37,10 @@ Remove it: in the same menu uncheck both items (your Claude settings are restore
 
 Unzip `PromptRunner-Windows-x64.zip`, keep `prompt-runner.exe` and `pr-hook.exe` in the same folder, and run `prompt-runner.exe` (SmartScreen: More info → Run anyway). The settings window needs Microsoft Edge WebView2, which Windows 10/11 normally has.
 
+## Floating gadget
+
+Turn it on from the menu (**Show floating gadget**) or **Settings → Appearance**. It shows the most urgent character and your 5h / 7d usage; click the arrow to list every session, and click a session to jump to its terminal. Drag it to move it, right-click for the menu, and click the pin to keep it on top of other windows (gold emblem = pinned, red = not pinned). Size and opacity are in Settings.
+
 ## Several Claude accounts
 
 If you start Claude Code with another `HOME` or `CLAUDE_CONFIG_DIR`, open **Settings → AI Agents → Claude Code → Claude profiles**, type the folder (for example `~/.claude-work`) or click **Find running Claude**, and add it. Each profile gets its own hooks and its own 5h / 7d usage line.
@@ -57,5 +62,7 @@ xattr -dr com.apple.quarantine "/Applications/Prompt Runner.app"
 เปิดแอป แล้วเลือกในเมนู Integrations → ติดตั้ง hook ของ Claude Code และเปิด "แสดงการใช้พ็อกเกจ" เพื่อดูโควต้า 5h / 7d
 
 **ติดตั้งบน Windows:** แตก zip เก็บ `prompt-runner.exe` กับ `pr-hook.exe` ไว้โฟลเดอร์เดียวกัน แล้วเปิด `prompt-runner.exe`
+
+**Gadget ลอย:** เปิดจากเมนู หรือ ตั้งค่า → รูปลักษณ์ เป็นแผงเล็กที่ลอยอยู่บนสุด แสดงตัวละคร โควต้า 5h / 7d และทุก session กดลูกศรเพื่อดูรายการ กดที่ session เพื่อกระโดดไปหา ลากเพื่อย้าย คลิกขวาเปิดเมนู และกดหมุดเพื่อให้อยู่บนสุด (หมุดทอง = ปักอยู่ หมุดแดง = ไม่ได้ปัก)
 
 **ใช้ Claude หลายบัญชี:** ไปที่ ตั้งค่า → AI Agents → Claude Code → โปรไฟล์ Claude แล้วพิมพ์โฟลเดอร์ เช่น `~/.claude-work` หรือกด "ค้นหา Claude ที่กำลังรัน" แต่ละโปรไฟล์จะมี hook และโควต้าของตัวเอง
