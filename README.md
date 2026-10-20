@@ -1,8 +1,8 @@
 # Prompt Runner: downloads
 
-A tiny menubar (macOS) / tray (Windows 10/11) app that shows what each AI coding agent is doing — running, planning, waiting for your approval, asking a question, waiting for a result, or idle — as a little animated pixel character, RunCat style.
+A tiny menubar (macOS) / tray (Windows 10/11, Linux) app that shows what each AI coding agent is doing — running, planning, waiting for your approval, asking a question, waiting for a result, or idle — as a little animated pixel character, RunCat style.
 
-- One icon per AI tool with a session count. Click it for every session: project, state, model, terminal/IDE, tokens, context %, and Claude Code's 5-hour / 7-day plan usage.
+- One icon per AI tool with a session count. Click it for every session: project, state, model, terminal/IDE, tokens, context %, and Claude Code's 5-hour / 7-day plan usage, as numbers or as a power bar that drains as you use it (Settings → Appearance).
 - Notifications when an agent needs your approval or asks a question.
 - An optional floating gadget (off by default): a small always-on-top panel with the character, 5h / 7d usage and every session. Turn it on from the menu or **Settings → Appearance**; drag it anywhere, pick Small / Medium / Large, and pin it to stay on top.
 - Works with Claude Code (hooks and its own status files). Several Claude accounts (for example started with `HOME=~/.claude-work claude`) are supported as separate profiles.
@@ -17,6 +17,7 @@ Get the latest files from the **[Releases page](../../releases/latest)**:
 
 - `PromptRunner-macOS.zip`: macOS 11 or newer, Apple Silicon and Intel
 - `PromptRunner-Windows-x64.zip`: Windows 10/11 (lightly tested)
+- `PromptRunner-Linux-x64.tar.gz`: Linux x64, Ubuntu 22.04 or newer, GNOME or KDE (new)
 
 ## Install on macOS
 
@@ -37,6 +38,22 @@ Remove it: in the same menu uncheck both items (your Claude settings are restore
 
 Unzip `PromptRunner-Windows-x64.zip`, keep `prompt-runner.exe` and `pr-hook.exe` in the same folder, and run `prompt-runner.exe` (SmartScreen: More info → Run anyway). The settings window needs Microsoft Edge WebView2, which Windows 10/11 normally has.
 
+## Install on Linux
+
+```sh
+tar -xzf PromptRunner-Linux-x64.tar.gz
+PromptRunner/install.sh
+```
+
+No sudo needed: it installs for your user into `~/.local/share/prompt-runner/app`, adds Prompt Runner to your app launcher and starts it. Then choose **Integrations → Install Claude Code hooks** and **Show Claude plan usage** in its menu, as on the Mac. **Settings → About → Check for updates** updates it in place.
+
+- Needs `libwebkit2gtk-4.1-0` and `libayatana-appindicator3-1` (Ubuntu's desktop has both): `sudo apt install libwebkit2gtk-4.1-0 libayatana-appindicator3-1`.
+- The tray icon needs AppIndicator support: built into Ubuntu and KDE. Plain GNOME (for example Fedora) needs the "AppIndicator and KStatusNotifierItem Support" extension; without it Prompt Runner shows the floating gadget instead.
+- The 5h / 7d usage next to the tray icon is plain text (Linux top bars show no colours); the gadget has the colours and bars.
+- Not on Linux yet: clicking a session to jump to its terminal.
+
+Remove it: `~/.local/share/prompt-runner/app/uninstall.sh` (also takes its hooks out of your Claude settings).
+
 ## Floating gadget
 
 Turn it on from the menu (**Show floating gadget**) or **Settings → Appearance**. It shows the most urgent character and your 5h / 7d usage; click the arrow to list every session, and click a session to jump to its terminal. Drag it to move it, right-click for the menu, and click the pin to keep it on top of other windows (gold emblem = pinned, red = not pinned). Size and opacity are in Settings.
@@ -49,7 +66,7 @@ If you start Claude Code with another `HOME` or `CLAUDE_CONFIG_DIR`, open **Sett
 
 ## ภาษาไทย
 
-แอปเล็กๆ บน menubar (macOS) / tray (Windows 10/11) ที่แสดงว่า AI เขียนโค้ดแต่ละตัวกำลังทำอะไรอยู่ เป็นตัวละครพิกเซลเคลื่อนไหว ทั้งกำลังทำงาน วางแผน รอการอนุมัติ ถามคำถาม นั่งรอผลลัพธ์ หรือว่าง ทำงานในเครื่องเท่านั้น ไม่ใช้เครือข่าย ไม่เก็บ prompt หรือโค้ด
+แอปเล็กๆ บน menubar (macOS) / tray (Windows 10/11, Linux) ที่แสดงว่า AI เขียนโค้ดแต่ละตัวกำลังทำอะไรอยู่ เป็นตัวละครพิกเซลเคลื่อนไหว ทั้งกำลังทำงาน วางแผน รอการอนุมัติ ถามคำถาม นั่งรอผลลัพธ์ หรือว่าง ทำงานในเครื่องเท่านั้น ไม่ใช้เครือข่าย ไม่เก็บ prompt หรือโค้ด
 
 repo นี้ใช้เก็บไฟล์ดาวน์โหลดเท่านั้น ไม่มีซอร์สโค้ดและภาพตัวละครต้นฉบับ
 
@@ -62,6 +79,10 @@ xattr -dr com.apple.quarantine "/Applications/Prompt Runner.app"
 เปิดแอป แล้วเลือกในเมนู Integrations → ติดตั้ง hook ของ Claude Code และเปิด "แสดงการใช้พ็อกเกจ" เพื่อดูโควต้า 5h / 7d
 
 **ติดตั้งบน Windows:** แตก zip เก็บ `prompt-runner.exe` กับ `pr-hook.exe` ไว้โฟลเดอร์เดียวกัน แล้วเปิด `prompt-runner.exe`
+
+**ติดตั้งบน Linux:** แตกไฟล์ `PromptRunner-Linux-x64.tar.gz` แล้วรัน `PromptRunner/install.sh` (ไม่ต้องใช้ sudo) ต้องมี `libwebkit2gtk-4.1-0` และ `libayatana-appindicator3-1` ซึ่ง Ubuntu แบบ desktop มีให้แล้ว ถอนการติดตั้งด้วย `~/.local/share/prompt-runner/app/uninstall.sh`
+
+**หลอดพลัง:** ไปที่ ตั้งค่า → รูปลักษณ์ → การแสดงผลบน menubar เลือกแสดงการใช้งานเป็น "หลอดพลัง" ที่ลดลงตามการใช้งาน และเลือกได้ว่าตัวเลข % จะเป็น "ที่ใช้ไป" หรือ "ที่เหลือ" ค่าเริ่มต้นยังเป็นตัวเลขแบบเดิม
 
 **Gadget ลอย:** เปิดจากเมนู หรือ ตั้งค่า → รูปลักษณ์ เป็นแผงเล็กที่ลอยอยู่บนสุด แสดงตัวละคร โควต้า 5h / 7d และทุก session กดลูกศรเพื่อดูรายการ กดที่ session เพื่อกระโดดไปหา ลากเพื่อย้าย คลิกขวาเปิดเมนู และกดหมุดเพื่อให้อยู่บนสุด (หมุดทอง = ปักอยู่ หมุดแดง = ไม่ได้ปัก)
 
