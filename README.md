@@ -56,7 +56,7 @@ Remove it: `~/.local/share/prompt-runner/app/uninstall.sh` (also takes its hooks
 
 ## Floating gadget
 
-Turn it on from the menu (**Show floating gadget**) or **Settings → Appearance**. It shows the most urgent character and your 5h / 7d usage; click the arrow to list every session, and click a session to jump to its terminal. Drag it to move it, right-click for the menu, and click the pin to keep it on top of other windows (gold emblem = pinned, red = not pinned). Size and opacity are in Settings.
+Turn it on from the menu (**Show floating gadget**) or **Settings → Appearance**. It shows the most urgent character and your 5h / 7d usage; click the arrow to list every session, and click a session to jump to its terminal. Drag it to move it, right-click for the menu, and click the pin to keep it on top of other windows (gold emblem = pinned, red = not pinned). Size and opacity are in Settings. **Settings → Appearance → Gadget display** lets the gadget show different things from the menubar, for example only the character in the menubar and everything in the gadget.
 
 ## Several Claude accounts
 
@@ -84,6 +84,6 @@ xattr -dr com.apple.quarantine "/Applications/Prompt Runner.app"
 
 **หลอดพลัง:** ไปที่ ตั้งค่า → รูปลักษณ์ → การแสดงผลบน menubar เลือกแสดงการใช้งานเป็น "หลอดพลัง" ที่ลดลงตามการใช้งาน และเลือกได้ว่าตัวเลข % จะเป็น "ที่ใช้ไป" หรือ "ที่เหลือ" ค่าเริ่มต้นยังเป็นตัวเลขแบบเดิม
 
-**Gadget ลอย:** เปิดจากเมนู หรือ ตั้งค่า → รูปลักษณ์ เป็นแผงเล็กที่ลอยอยู่บนสุด แสดงตัวละคร โควต้า 5h / 7d และทุก session กดลูกศรเพื่อดูรายการ กดที่ session เพื่อกระโดดไปหา ลากเพื่อย้าย คลิกขวาเปิดเมนู และกดหมุดเพื่อให้อยู่บนสุด (หมุดทอง = ปักอยู่ หมุดแดง = ไม่ได้ปัก)
+**Gadget ลอย:** เปิดจากเมนู หรือ ตั้งค่า → รูปลักษณ์ เป็นแผงเล็กที่ลอยอยู่บนสุด แสดงตัวละคร โควต้า 5h / 7d และทุก session กดลูกศรเพื่อดูรายการ กดที่ session เพื่อกระโดดไปหา ลากเพื่อย้าย คลิกขวาเปิดเมนู และกดหมุดเพื่อให้อยู่บนสุด (หมุดทอง = ปักอยู่ หมุดแดง = ไม่ได้ปัก) ตั้งค่าให้ gadget แสดงต่างจาก menubar ได้ที่ ตั้งค่า → รูปลักษณ์ → การแสดงผลบน gadget เช่น ให้ menubar แสดงแค่ตัวละคร แต่ gadget แสดงครบ
 
 **ใช้ Claude หลายบัญชี:** ไปที่ ตั้งค่า → AI Agents → Claude Code → โปรไฟล์ Claude แล้วพิมพ์โฟลเดอร์ เช่น `~/.claude-work` หรือกด "ค้นหา Claude ที่กำลังรัน" แต่ละโปรไฟล์จะมี hook และโควต้าของตัวเอง
