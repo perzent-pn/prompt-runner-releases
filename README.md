@@ -6,7 +6,7 @@ A tiny menubar (macOS) / tray (Windows 10/11, Linux) app that shows what each AI
 - Notifications when an agent needs your approval or asks a question.
 - An optional floating gadget (off by default): a small always-on-top panel with the character, 5h / 7d usage and every session. Turn it on from the menu or **Settings → Appearance**; drag it anywhere, pick Small / Medium / Large, and pin it to stay on top.
 - Works with Claude Code (hooks and its own status files). Several Claude accounts (for example started with `HOME=~/.claude-work claude`) are supported as separate profiles.
-- Characters: samurai, knight, viking, soldier, oni, vampire, mage, cat, dog, bunny, robot, minimal. English and Thai.
+- Characters: samurai, knight, viking, soldier, oni, vampire, mage, cat, dog, bunny, robot, minimal, or your own (below). English and Thai.
 - Display only, local only: no network, no prompt or code storage, no credential reads, sessions kept in memory.
 
 This repository only hosts the downloads. The source code and the character artwork are not published here.
@@ -58,6 +58,14 @@ Remove it: `~/.local/share/prompt-runner/app/uninstall.sh` (also takes its hooks
 
 Turn it on from the menu (**Show floating gadget**) or **Settings → Appearance**. It shows the most urgent character and your 5h / 7d usage; click the arrow to list every session, and click a session to jump to its terminal. Drag it to move it, right-click for the menu, and click the pin to keep it on top of other windows (gold emblem = pinned, red = not pinned). Size and opacity are in Settings. **Settings → Appearance → Gadget display** lets the gadget show different things from the menubar, for example only the character in the menubar and everything in the gadget.
 
+## Your own characters
+
+**Settings → Appearance → Your own characters → Create a character.** Add one or more pictures for each pose; several play in turn as an animation (frame 1, frame 2, …). Adjust each frame's size and place, set the speed, let it remove a plain or checkered background, and choose each pose's effect (a mark in any colour, a small picture of your own, blinking or not). Characters stay on your computer and are kept through updates; **Export** one to a `.prchar` file to back it up, move it or share it, and **Import** it elsewhere.
+
+## Problems and ideas
+
+**Settings → About → Feedback and problems** fills in a report for you (with the app's own error log if you want), shows it in full, then opens it as an [issue here](../../issues) in your browser, or copies it so you can send it another way. Prompt Runner never sends anything by itself.
+
 ## Several Claude accounts
 
 If you start Claude Code with another `HOME` or `CLAUDE_CONFIG_DIR`, open **Settings → AI Agents → Claude Code → Claude profiles**, type the folder (for example `~/.claude-work`) or click **Find running Claude**, and add it. Each profile gets its own hooks and its own 5h / 7d usage line.
@@ -85,5 +93,9 @@ xattr -dr com.apple.quarantine "/Applications/Prompt Runner.app"
 **หลอดพลัง:** ไปที่ ตั้งค่า → รูปลักษณ์ → การแสดงผลบน menubar เลือกแสดงการใช้งานเป็น "หลอดพลัง" ที่ลดลงตามการใช้งาน และเลือกได้ว่าตัวเลข % จะเป็น "ที่ใช้ไป" หรือ "ที่เหลือ" ค่าเริ่มต้นยังเป็นตัวเลขแบบเดิม
 
 **Gadget ลอย:** เปิดจากเมนู หรือ ตั้งค่า → รูปลักษณ์ เป็นแผงเล็กที่ลอยอยู่บนสุด แสดงตัวละคร โควต้า 5h / 7d และทุก session กดลูกศรเพื่อดูรายการ กดที่ session เพื่อกระโดดไปหา ลากเพื่อย้าย คลิกขวาเปิดเมนู และกดหมุดเพื่อให้อยู่บนสุด (หมุดทอง = ปักอยู่ หมุดแดง = ไม่ได้ปัก) ตั้งค่าให้ gadget แสดงต่างจาก menubar ได้ที่ ตั้งค่า → รูปลักษณ์ → การแสดงผลบน gadget เช่น ให้ menubar แสดงแค่ตัวละคร แต่ gadget แสดงครบ
+
+**สร้างตัวละครเอง:** ไปที่ ตั้งค่า → รูปลักษณ์ → ตัวละครของคุณเอง → สร้างตัวละคร ใส่รูปท่าละ 1 รูปขึ้นไป ถ้าใส่หลายรูปจะเล่นเป็น animation (เฟรมที่ 1, เฟรมที่ 2, …) ปรับขนาดและตำแหน่งแต่ละเฟรม ลบพื้นหลัง และเลือก effect ของแต่ละท่าได้ ตัวละครเก็บในเครื่องและไม่หายตอนอัปเดต ส่งออกเป็นไฟล์ .prchar เพื่อสำรองหรือส่งให้เพื่อนนำเข้าได้
+
+**แจ้งปัญหาหรือเสนอไอเดีย:** ไปที่ ตั้งค่า → เกี่ยวกับ → Feedback และแจ้งปัญหา แอปจะเตรียมรายงานให้ ดูทั้งหมดก่อน แล้วเปิดเป็น issue บน GitHub หรือคัดลอกไปส่งทางอื่นก็ได้ แอปไม่ส่งอะไรออกไปเอง
 
 **ใช้ Claude หลายบัญชี:** ไปที่ ตั้งค่า → AI Agents → Claude Code → โปรไฟล์ Claude แล้วพิมพ์โฟลเดอร์ เช่น `~/.claude-work` หรือกด "ค้นหา Claude ที่กำลังรัน" แต่ละโปรไฟล์จะมี hook และโควต้าของตัวเอง
