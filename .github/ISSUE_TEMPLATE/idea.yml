@@ -1,0 +1,15 @@
+name: Suggest an idea
+description: Something you would like Prompt Runner to do.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        เสนอไอเดียเป็นภาษาไทยได้เลย
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+      description: What should it do, and when would it help you?
+    validations:
+      required: true
