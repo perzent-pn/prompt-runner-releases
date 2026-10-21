@@ -1,0 +1,27 @@
+name: Report a problem
+description: Something in Prompt Runner does not work as it should. (The app's Settings → About → Report a problem fills this in for you.)
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do not paste prompts, code or anything private.
+        แจ้งปัญหาเป็นภาษาไทยได้เลย กรุณาอย่าใส่ prompt, โค้ด หรือข้อมูลส่วนตัว
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: Steps to see it again help a lot. Screenshots are welcome.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Prompt Runner version and system
+      description: Settings → About shows the version, e.g. "0.1.14 · macOS 26.0 (aarch64)".
+  - type: textarea
+    id: log
+    attributes:
+      label: Error log (optional)
+      description: Settings → About → Open the log folder → app.log. It holds only Prompt Runner's own error messages.
+      render: text
